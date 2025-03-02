@@ -11,7 +11,7 @@ export default function LoginCard() {
   
           <TextInput
             style={styles.input}
-            placeholder="Enter Email Id"
+            placeholder="Enter Email"
             placeholderTextColor="#888"
             value={email}
             onChangeText={setEmail}
