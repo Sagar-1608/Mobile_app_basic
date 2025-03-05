@@ -1,50 +1,59 @@
-import { View, Text, TextInput,TouchableOpacity,StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
+import React, {useState} from 'react';
 
 export default function LoginCard() {
-
-      const [email, setEmail] = useState('');
-      const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
-  <View style={styles.loginBox}>
-          <Text style={styles.title}>Login</Text>
-  
-          <TextInput
-            style={styles.input}
-            placeholder="Enter Email"
-            placeholderTextColor="#888"
-            value={email}
-            onChangeText={setEmail}
-            keyboardType="email-address"
-          />
-  
-          <TextInput
-            style={styles.input}
-            placeholder="Enter Password"
-            placeholderTextColor="#888"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-          />
-  
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Login</Text>
-          </TouchableOpacity>
-  
-          <Text style={styles.footerText}>Don't have an account? Sign Up</Text>
-        </View>
-  )
+    <View style={styles.container}>
+      <View style={styles.loginBox}>
+        <Text style={styles.title}>Login</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="Enter Email"
+          placeholderTextColor="#888"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Enter Password"
+          placeholderTextColor="#888"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
+
+        <Text style={styles.footerText}>Don't have an account? Sign Up</Text>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent:"center",
     alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    padding: 10,
+    marginTop: 50,
   },
   loginBox: {
     width: '90%',
-    padding: 20,
+    padding: 40,
     backgroundColor: '#FFF',
     borderRadius: 10,
     elevation: 5,
